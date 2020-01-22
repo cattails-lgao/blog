@@ -6,17 +6,19 @@
     <div class="content">
       <div class="user-info">
         <div class="user-name">
-          <a href v-if="item.comment_uid != item.to_uid && !item.reply">
-            {{ item.from_uid }}@{{ item.to_uid }}
+          <a href v-if="item.reply_id != item.to_uid && !item.reply">
+            <router-link to='/'>{{ item.from_uid }}</router-link>
+            @
+            <router-link to='/'>{{ item.to_uid }}:</router-link>
           </a>
-          <a href v-else>{{ item.from_uid }}</a>
+          <a href v-else>{{ item.from_uid }}:</a>
         </div>
         <p class="text">{{ item.content }}</p>
       </div>
       <div class="comment-info">
         <span class="time">{{ item.create_time }}</span>
         <span class="like">喜欢{{ item.like_num }}</span>
-        <span class="hite">讨厌</span>
+        <span class="hite">讨厌{{ item.hit_num }}</span>
         <span class="reply-btn" @click="reply(item)">回复</span>
       </div>
 

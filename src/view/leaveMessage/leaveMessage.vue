@@ -44,7 +44,7 @@
         <div class="lm_comment">
           <commonTitle :level="1">评论</commonTitle>
           <div class="comment-container">
-            <comment v-for="(item, index) in commentData" :key="index"></comment>
+            <comment v-for="(item, index) in commentData" :key="index" :item="item"></comment>
           </div>
         </div>
       </div>
@@ -107,7 +107,48 @@ export default {
         { id: 3, url: require("@/assets/img/thumb.jpeg") }
       ],
       commentData:[
-        {}
+        {
+          comment_id: 1,
+          reply_id: 1000,
+          from_uid: 1000,
+          to_uid: 1001,
+          content: '写作CL，读作人生',
+          create_time: new Date(),
+          like_num: 20,
+          hit_num: 2,
+          reply: [
+            {
+              comment_id: 1,
+              reply_id: 1000,
+              from_uid: 1002,
+              to_uid: 1000,
+              content: 'CL大师作',
+              create_time: new Date(),
+              like_num: 20,
+              hit_num: 2,
+            },
+            {
+              comment_id: 2,
+              from_uid: 1003,
+              to_uid: 1002,
+              content: '+1',
+              create_time: new Date(),
+              like_num: 20,
+              hit_num: 2,
+            }
+          ]
+        },
+        {
+          comment_id: 1,
+          reply_id: 1000,
+          from_uid: 1000,
+          to_uid: 1001,
+          content: '你将不再是武器，而是人如其名的人',
+          create_time: new Date(),
+          like_num: 20,
+          hit_num: 2,
+          reply: []
+        }
       ]
     };
   },
