@@ -28,7 +28,7 @@
         <section>
             <asideTitle title="标签墙"></asideTitle>
             <asideContent className='tags' :tags='tags'>
-                <div class="tags_list">
+                <div class="tags_list aside">
                     <router-link :to='{name: item.url}' v-for="item in tags" :key="item.id">{{item.name}}</router-link>
                 </div>
             </asideContent>

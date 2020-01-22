@@ -139,5 +139,9 @@ export default {
             }
         }
     }
+
+    &>.aside {
+        padding: 0;
+    }
 }
 </style>
